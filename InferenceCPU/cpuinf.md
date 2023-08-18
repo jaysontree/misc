@@ -9,12 +9,16 @@ CPU inferencing Service:
 
 ##### compuation capacity
 CPU Peak Performance: `num of cores` *x* `clock` *x* `num of computes(instruction set)`
+
 <font size='2' color='purple'>--- more detail on CPU Benchmark: [cpufp](https://github.com/pigirons/cpufp) </font>
+
 Memory Bandwidth: `data transportaion per clock cycle` *x* `clock` *x* `memory interface width`
 
 ##### model complexity
 time complexity `F`: num of M-Adds (* precision)
+
 space complexity `B`: num of Params (* precision)
+
 Operation intensity: `I=F/B` 
 
 ##### ideal computation time cost:
@@ -24,7 +28,7 @@ Operation intensity: `I=F/B`
 - fit the best instruction set
 - intraOP parallelism 
 
-<font size=2 color='purple'> --- more details: MKLdnn, MLAS </font>
+<font size=2 color='purple'> --- more details: see MKLdnn, MLAS </font>
 
 ### Experiment
 ##### Single worker Experiment
