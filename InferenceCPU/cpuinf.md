@@ -83,6 +83,8 @@ Multi cores serves multi requests
 | 4 | 4 | 16 | 399% | 787% | 79 | 389 | 10.20 |
 | 1 | 4 | 4 | 406% | 402% | 80 | 330 | 12.00 |
 
+![response time vs load](response_load.jpg "Y:response time, X: load")
+
 observed:
 - In low load situation, the result is similar to single worker experiment. having the most intraOP parallelism lead to lowest respose time.
 - In high load situation, workers on the same machine may compete for resource. parallelism exceeding num of CPU cores may may slow down the service. outliers with extrodinary high response time are observed, which may be casued by thread block, making the service unstable.
