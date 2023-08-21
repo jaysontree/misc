@@ -38,7 +38,7 @@ several cores serve one request
 - CPU: Intel Xeon Gold 6226R (32 cores)
 - variable: OMP_NUM_THREADS
 
-| intraOP Parallelism | MKL verbose | CPU utility | RPS |
+| intraOP Parallelism | MKL verbose | CPU utilization | RPS |
 | ----- | ----- | ----- | ----- |
 | 1 | NThr: 1 | 104% | 3.658 |
 | 2 | NThr: 2 | 206% | 5.042 |
@@ -58,7 +58,7 @@ Test Case: simple convolution net
 - CPU: Intel i7-7700k (4 cores)
 - variable: OMP_NUM_THREADS, KMP_AFFINITY
 
-| intraOP Parallelism | MKL verbose | CPU utility | RPS |
+| intraOP Parallelism | MKL verbose | CPU utilization | RPS |
 | ----- | ----- | ----- | ----- |
 | 8 | NThr: 8 | 800% | 8.25 |
 | 4 | NThr: 4 | 400% | 8.29 |
@@ -77,7 +77,7 @@ Multi cores serves multi requests
 - CPU: Intel i7-7700k (4cores)
 - variable: num of gunicorn workers/num of replica, OMP_NUM_THREADS
 
-| workers/ replicas | intraOP paral | total | low load CPU utility | high load CPU utility | low load response time(ms) | high load response time(ms) | high load RPS |
+| workers/ replicas | intraOP paral | total | low load CPU utilization | high load CPU utilization | low load response time(ms) | high load response time(ms) | high load RPS |
 | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
 | 4 | 1 | 4 | 99% | 395% | 211 | 266 | __15.90__ |
 | 4 | 4 | 16 | 399% | 787% | 79 | 389 | 10.20 |
