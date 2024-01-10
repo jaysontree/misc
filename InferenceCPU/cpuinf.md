@@ -1,6 +1,7 @@
 # Pracitice: Inference Server with CPU
+The better strategy to build web service for inferencing(with CPU)
 
-### intro
+### background
 
 CPU inferencing Service:
 - low cost
