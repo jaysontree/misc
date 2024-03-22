@@ -69,7 +69,7 @@ observed：
 - parallelism acceleration is bounded by num of physical cores of CPU
 - in such computing tasks, applying more threads does not improve efficiency and  thread switching has cost
 
-:speech_balloon: <font color='blue'>In single worker case, increaing intraOP parallelism can reduce infernce time for many nets. the best practice is to have num of `intraOP parallelism = num of cores` and bound thread and core.</font>
+:speech_balloon: <font color='blue'>In single worker case, increaing intraOP parallelism can reduce infernce time for many nets. the best practice is to have num of `intraOP parallelism = num of cores` and bind thread and core.</font>
 
 ##### Multi-woker concurrency Experiment
 Exp3: 
