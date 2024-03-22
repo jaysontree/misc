@@ -63,7 +63,7 @@ Test Case: simple convolution net
 | ----- | ----- | ----- | ----- |
 | 8 | NThr: 8 | 800% | 8.25 |
 | 4 | NThr: 4 | 400% | 8.29 |
-| 4 with thread-core bounding | NThr: 4 | 400% | __8.46__ |
+| 4 with thread-core binding | NThr: 4 | 400% | __8.46__ |
 
 observed：
 - parallelism acceleration is bounded by num of physical cores of CPU
