@@ -1,36 +1,6 @@
 # Pracitice: Inference Server with CPU
 The better strategy to build web service for inferencing(with CPU)
 
-### background
-
-CPU inferencing Service:
-- low cost
-- high concurrency, easy to scale up
-
-
-##### compuation capacity
-CPU Peak Performance: `num of cores` *x* `clock` *x* `num of computes(instruction set)`
-
-<font size='2' color='purple'>--- more detail on CPU Benchmark: [cpufp](https://github.com/pigirons/cpufp) </font>
-
-Memory Bandwidth: `data transportaion per clock cycle` *x* `clock` *x* `memory interface width`
-
-##### model complexity
-time complexity `F`: num of M-Adds (* precision)
-
-space complexity `B`: num of Params (* precision)
-
-Operation intensity: `I=F/B` 
-
-##### ideal computation time cost:
-`t = total_F / min(I * Bandwidth, CPU Peak Performance)`
-
-##### CPU inference Acceleration
-- fit the best instruction set
-- intraOP parallelism 
-
-<font size=2 color='purple'> --- more details: see MKLdnn, MLAS </font>
-
 ### Experiment
 ##### Single worker Experiment
 Exp1: Accelerate with higher intraOP parallelism
@@ -94,3 +64,33 @@ observed:
 
 
 :speech_balloon: <font color='blue'>In concurrency case, if response time is important, it is better to have intraOP parallelism simiar to single worker case. While repicas with no intraOP parallelism have the best RPS, almost 30% increase in the test case. Other factors such as memory usage shall also be concerned to decide whether use replicas or intraOP parallelism. A probably good pratice is to have `num of replicas * intraOP parallelism = num of cores`</font>
+
+### some background information
+
+CPU inferencing Service:
+- low cost
+- high concurrency, easy to scale up
+
+
+##### compuation capacity
+CPU Peak Performance: `num of cores` *x* `clock` *x* `num of computes(instruction set)`
+
+<font size='2' color='purple'>--- more detail on CPU Benchmark: [cpufp](https://github.com/pigirons/cpufp) </font>
+
+Memory Bandwidth: `data transportaion per clock cycle` *x* `clock` *x* `memory interface width`
+
+##### model complexity
+time complexity `F`: num of M-Adds (* precision)
+
+space complexity `B`: num of Params (* precision)
+
+Operation intensity: `I=F/B` 
+
+##### ideal computation time cost:
+`t = total_F / min(I * Bandwidth, CPU Peak Performance)`
+
+##### CPU inference Acceleration
+- fit the best instruction set
+- intraOP parallelism 
+
+<font size=2 color='purple'> --- more details: see MKLdnn, MLAS </font>
